@@ -23,6 +23,8 @@ dependencies:
 - base >= 4.7 && < 5
 - unliftio
 - mtl
+- exceptions
+- unliftio-core
 
 library:
   source-dirs: src

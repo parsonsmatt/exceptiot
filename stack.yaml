@@ -31,7 +31,7 @@ resolver:
 #   - wai
 packages:
 - .
-- dist-newstyle/tmp/src-853991/hspec-core-2.10.6
+
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
