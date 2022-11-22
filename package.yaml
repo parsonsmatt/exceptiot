@@ -11,8 +11,8 @@ extra-source-files:
 - changelog.md
 
 # Metadata used when publishing your package
-# synopsis:            make synopsis here
-# category:            make category here
+synopsis:            ExceptT, but uses IO instead of Either
+category:            Control
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is

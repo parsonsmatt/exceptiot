@@ -6,7 +6,9 @@ cabal-version: 1.12
 
 name:           exceptiot
 version:        0.0.1.0
+synopsis:       ExceptT, but uses IO instead of Either
 description:    Please see the README on Github at <https://github.com/parsonsmatt/exceptiot#readme>
+category:       Control
 homepage:       https://github.com/parsonsmatt/exceptiot#readme
 bug-reports:    https://github.com/parsonsmatt/exceptiot/issues
 author:         Matt Parsons
