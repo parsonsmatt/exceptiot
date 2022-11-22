@@ -1,7 +1,7 @@
-{-# language DerivingStrategies #-}
-{-# language GeneralizedNewtypeDeriving #-}
-{-# language FlexibleInstances #-}
-{-# language MultiParamTypeClasses #-}
+{-# LANGUAGE DerivingStrategies #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 
 module Control.Monad.Except.IO
     ( ExceptIOT (..)
@@ -10,14 +10,14 @@ module Control.Monad.Except.IO
     , modifyError
     ) where
 
-import Control.Monad.Catch hiding (try, catch)
-import UnliftIO
 import Control.Applicative
+import Control.Monad.Catch hiding (catch, try)
+import Control.Monad.Error.Class hiding (modifyError)
+import qualified Control.Monad.Except as Except
 import Control.Monad.Reader
 import Control.Monad.State
 import Control.Monad.Writer
-import Control.Monad.Error.Class hiding (modifyError)
-import qualified Control.Monad.Except as Except
+import UnliftIO
 
 -- | This type is useful for providing a 'MonadError' constraint to an 'IO'
 -- action for a given type. It can replace 'ExceptT'.
