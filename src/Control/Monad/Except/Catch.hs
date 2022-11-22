@@ -31,15 +31,27 @@ newtype ExceptCatchT e m a = ExceptCatchT { unsafeRunExceptCatchT :: m a }
         , MonadWriter w , MonadFix, MonadFail, MonadThrow, MonadCatch, MonadMask
         )
 
+-- |
+--
+-- @since 0.1.0.0
 instance (MonadCatch m, Exception e) => MonadError e (ExceptCatchT e m) where
     throwError = throwM
     catchError = catch
 
+-- | Run an 'ExceptCatchT' action. This will catch any thrown @e@ exceptions,
+-- regardless of whether you used 'throwM' or 'throwError'.
+--
+-- Any exception that is not mentioned in @e@ will be thrown - this does not
+-- catch all exceptions!
+--
+-- @since 0.1.0.0
 runExceptCatchT :: (Exception e, MonadCatch m) => ExceptCatchT e m a -> m (Either e a)
 runExceptCatchT = try . unsafeRunExceptCatchT
 
 -- | Like 'Except.modifyError', but it selects the 'ExceptCatchT' instance for 'IO'
 -- exceptions instead of the 'ExceptT' instance with an 'Either' error.
+--
+-- @since 0.1.0.0
 modifyError
     :: (Exception e, MonadCatch m, MonadError e' m)
     => (e -> e') -> ExceptCatchT e m a -> m a
