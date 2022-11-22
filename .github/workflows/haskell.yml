@@ -16,12 +16,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ghc: ["8.6.5", "8.8.4", "8.10.4", "9.0.2", "9.2.4", "9.4.2"]
+        ghc: ["8.8.4", "8.10.4", "9.0.2", "9.2.4", "9.4.2"]
         experimental: [false]
-        include:
-          - ghc: "head"
-            experimental: true
-      continue-on-error: ${{ matrix.experimental }}
     steps:
       - uses: actions/checkout@v2
       - uses: haskell/actions/setup@v1

@@ -1,8 +1,8 @@
-build: TEMPLATE.cabal
+build: exceptiot.cabal
 	cabal build
 
-TEMPLATE.cabal: package.yaml
+exceptiot.cabal: package.yaml
 	hpack
 
-test: TEMPLATE.cabal
+test: exceptiot.cabal
 	cabal test
