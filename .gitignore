@@ -1,0 +1,10 @@
+.stack-work
+stack.yaml.lock
+*.yaml.lock
+/dist*
+*~
+.cabal-sandbox/
+cabal.sandbox.config
+.hspec-failures
+*.sqlite*
+cabal.project.freeze
