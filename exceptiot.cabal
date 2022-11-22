@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      Control.Monad.ExceptIOT
+      Control.Monad.Except.IO
   other-modules:
       Paths_exceptiot
   hs-source-dirs:
