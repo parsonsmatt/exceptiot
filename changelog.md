@@ -2,5 +2,5 @@
 
 ## 0.0.1.0
 
-* [# PR Number](PR Link)
-    * Describe change here
+* [#1](https://github.com/parsonsmatt/exceptiot/pull/1)
+    * Initial implementation
