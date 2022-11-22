@@ -20,7 +20,7 @@ category:            Control
 description:         Please see the README on Github at <https://github.com/parsonsmatt/exceptiot#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+- base >= 4.13 && < 5
 - unliftio
 - mtl
 - exceptions
