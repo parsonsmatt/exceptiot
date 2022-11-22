@@ -1,6 +1,6 @@
-name:                TEMPLATE
+name:                exceptiot
 version:             0.0.1.0
-github:              "parsonsmatt/TEMPLATE"
+github:              "parsonsmatt/exceptiot"
 license:             BSD3
 author:              "Matt Parsons"
 maintainer:          parsonsmatt@gmail.com
@@ -17,19 +17,21 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/parsonsmatt/TEMPLATE#readme>
+description:         Please see the README on Github at <https://github.com/parsonsmatt/exceptiot#readme>
 
 dependencies:
 - base >= 4.7 && < 5
+- unliftio
+- mtl
 
 library:
   source-dirs: src
   ghc-options:
     - -Wall
-    - -Wcompa
+    - -Wcompat
 
 tests:
-  TEMPLATE-test:
+  exceptiot-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -38,7 +40,7 @@ tests:
     - -with-rtsopts=-N
     - -O2
     dependencies:
-    - TEMPLATE
+    - exceptiot
     - hspec
     build-tools:
     - hspec-discover
