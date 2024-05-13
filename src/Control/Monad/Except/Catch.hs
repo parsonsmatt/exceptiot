@@ -11,9 +11,10 @@ module Control.Monad.Except.Catch
     ) where
 
 import Control.Applicative
+import Control.Monad
 import Control.Monad.Catch
 import Control.Monad.Error.Class hiding (modifyError)
-import qualified Control.Monad.Except as Except
+import Control.Monad.Fix
 import Control.Monad.IO.Unlift
 import Control.Monad.Reader
 import Control.Monad.State
@@ -48,7 +49,7 @@ instance (MonadCatch m, Exception e) => MonadError e (ExceptCatchT e m) where
 runExceptCatchT :: (Exception e, MonadCatch m) => ExceptCatchT e m a -> m (Either e a)
 runExceptCatchT = try . unsafeRunExceptCatchT
 
--- | Like 'Except.modifyError', but it selects the 'ExceptCatchT' instance for 'IO'
+-- | Like 'Control.Monad.Except.modifyError', but it selects the 'ExceptCatchT' instance for 'IO'
 -- exceptions instead of the 'ExceptT' instance with an 'Either' error.
 --
 -- @since 0.1.0.0

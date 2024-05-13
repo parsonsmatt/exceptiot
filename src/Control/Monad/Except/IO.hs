@@ -11,9 +11,11 @@ module Control.Monad.Except.IO
     ) where
 
 import Control.Applicative
+import Control.Monad
 import Control.Monad.Catch hiding (catch, try)
 import Control.Monad.Error.Class hiding (modifyError)
 import qualified Control.Monad.Except as Except
+import Control.Monad.Fix
 import Control.Monad.Reader
 import Control.Monad.State
 import Control.Monad.Writer
