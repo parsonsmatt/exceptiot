@@ -16,11 +16,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ghc: ["8.8.4", "8.10.4", "9.0.2", "9.2.4", "9.4.2"]
+        ghc: ["8.8.4", "8.10.4", "9.0.2", "9.2.4", "9.4.2", "9.6", "9.8", "9.10"]
         experimental: [false]
     steps:
-      - uses: actions/checkout@v2
-      - uses: haskell/actions/setup@v1
+      - uses: actions/checkout@v4
+      - uses: haskell-actions/setup@v2
         id: setup-haskell-cabal
         with:
           ghc-version: ${{ matrix.ghc }}
@@ -40,8 +40,5 @@ jobs:
         continue-on-error: ${{ matrix.experimental }}
       - run: cabal v2-test --disable-optimization -j $CONFIG --test-options "--fail-on-focus"
         continue-on-error: ${{ matrix.experimental }}
-      - if: ${{ matrix.ghc != '8.6.5' }}
-        continue-on-error: ${{ matrix.experimental }}
-        run: cabal v2-haddock -j $CONFIG
       - run: cabal v2-sdist
         continue-on-error: ${{ matrix.experimental }}
